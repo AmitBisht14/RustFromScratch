@@ -4,7 +4,9 @@ mod tuples;
 use tuples::access_tuples;
 
 mod arrays;
+mod slices;
 use arrays::access_array;
+use slices::access_slice;
 fn main() {
     // if skip @1 then out of scope function can be consumed in below way
     // tuples::access_tuples();
@@ -12,4 +14,6 @@ fn main() {
     access_tuples();
     println!("\r\narrays:");
     access_array();
+    println!("\r\nslices:");
+    access_slice();
 }
