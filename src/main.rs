@@ -7,9 +7,11 @@ mod primitives {
     pub mod tuples;
 }
 mod custom_types {
+    pub mod enums;
     pub mod structs;
 }
 //to use specific pub function from above import -- @1
+use custom_types::enums::access_enums;
 use custom_types::structs::access_structs;
 use primitives::arrays::access_array;
 use primitives::slices::access_slice;
@@ -26,4 +28,6 @@ fn main() {
     access_slice();
     println!("\r\nstructs:");
     access_structs();
+    println!("\r\nenums:");
+    access_enums();
 }
