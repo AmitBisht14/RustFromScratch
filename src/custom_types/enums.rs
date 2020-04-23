@@ -1,4 +1,10 @@
-// enums in rust are completely different from other oop languages
+// enums declaration similar to other oop languages
+enum Number {
+    Zero,
+    One,
+    Two
+}
+// enums in rust are completely different from other oop languages in some cases
 // to make it easier to understand, consider enums as a skeleton or declaration where while implementing or consuming enums we can perform certain operations based on inputs but it can't return anything
 // as shown below SomeEvent is an Enum which can also take input params or can have some properties
 enum SomeEvent {
@@ -22,9 +28,14 @@ fn consume_event(event: SomeEvent) {
 }
 
 pub fn access_enums() {
+    println!("enums first element: {}", Number::Zero as i32);
+    println!("enums second element: {}", Number::One as i32);
+    println!("enums third element: {}", Number::Two as i32);
+
     consume_event(SomeEvent::FormLoad);
     consume_event(SomeEvent::FormUnload);
     consume_event(SomeEvent::KeyUp('x'));
     consume_event(SomeEvent::Clipboard(String::from("clipboard content")));
     consume_event(SomeEvent::MousePointer { x: 10, y: 20 });
+
 }
